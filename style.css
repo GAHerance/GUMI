@@ -1,0 +1,191 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  color: #f5fff8;
+  background-color: #071d14;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 1160px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 48px 32px;
+}
+
+.destaque {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 64px;
+  width: 100%;
+}
+
+.texto {
+  flex: 1 1 52%;
+}
+
+h1 {
+  margin: 0 0 22px;
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  line-height: 1.05;
+}
+
+.frase {
+  max-width: 450px;
+  margin: 0 0 32px;
+  color: #d6eadc;
+  font-size: clamp(1.15rem, 2vw, 1.45rem);
+  line-height: 1.5;
+}
+
+.selo {
+  display: inline-block;
+  margin: 0;
+  padding: 8px 14px;
+  border: 1px solid #3a8e58;
+  border-radius: 30px;
+  color: #b4f6c8;
+  background-color: #123c27;
+  font-size: 0.95rem;
+  font-weight: bold;
+}
+
+.hashtag {
+  margin: 14px 0 32px;
+  color: #47e77f;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: bold;
+}
+
+.botoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.botao {
+  display: inline-block;
+  min-width: 155px;
+  padding: 15px 24px;
+  border: 2px solid #47e77f;
+  border-radius: 12px;
+  color: #072114;
+  background-color: #47e77f;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: bold;
+}
+
+.botao-contorno {
+  color: #f5fff8;
+  background-color: transparent;
+}
+
+.botao:hover {
+  border-color: #8af8ad;
+  background-color: #8af8ad;
+}
+
+.botao-contorno:hover {
+  color: #072114;
+}
+
+.botao:focus-visible {
+  outline: 3px solid white;
+  outline-offset: 4px;
+}
+
+.foto-moldura {
+  flex: 1 1 44%;
+  max-width: 460px;
+  margin: 0;
+  padding: 10px;
+  border: 1px solid #2d7047;
+  border-radius: 26px;
+  background-color: #123323;
+  box-shadow: 0 20px 55px #031009, 0 0 65px #174e2d;
+}
+
+.foto-amigos {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+}
+
+@media (max-width: 800px) {
+  main {
+    padding: 44px 20px;
+  }
+
+  .destaque {
+    flex-direction: column;
+    gap: 36px;
+  }
+
+  .texto {
+    text-align: center;
+  }
+
+  .frase {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .botoes {
+    justify-content: center;
+  }
+
+  .foto-moldura {
+    width: 100%;
+    max-width: 440px;
+  }
+}
+
+@media (max-width: 420px) {
+  .botoes {
+    flex-direction: column;
+  }
+
+  .botao {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .texto,
+  .foto-moldura {
+    animation: entrar 600ms ease-out;
+  }
+
+  .foto-moldura {
+    animation-delay: 100ms;
+  }
+
+  .botao {
+    transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease;
+  }
+
+  .botao:hover {
+    transform: translateY(-3px);
+  }
+
+  @keyframes entrar {
+    from {
+      transform: translateY(12px);
+    }
+
+    to {
+      transform: translateY(0);
+    }
+  }
+}
